@@ -1,0 +1,615 @@
+{
+  "contractName": "BaseController",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isOwner",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_managerAddr",
+          "type": "address"
+        }
+      ],
+      "name": "setManagerAddr",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_managerAddr\",\"type\":\"address\"}],\"name\":\"setManagerAddr\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Samsung/code/dnp/contracts/helpers/BaseController.sol\":\"BaseController\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Samsung/code/dnp/contracts/helpers/BaseController.sol\":{\"keccak256\":\"0xbae75dcb76a9f2e8155b6c6445174bff7ed1f2a56bafff8232264073fc7015f9\",\"urls\":[\"bzz-raw://13ce6c79d331df4a19644bb497549d421e6af5930a4a28b5f5104b761151b3a2\",\"dweb:/ipfs/QmX6pov1LxHfWjvC7JN4fM9wR9pQjHup6gYwsDmr8KBah4\"]},\"/C/Users/Samsung/code/dnp/node_modules/@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0x90a3995645af7562d84b9d69363ffa5ae7217714ab61e951bf7bc450f40e4061\",\"urls\":[\"bzz-raw://216ef9d6b614db4eb46970b4e84903f2534a45572dd30a79f0041f1a5830f436\",\"dweb:/ipfs/QmNPrJ4MWKUAWzKXpUqeyKRUfosaoANZAqXgvepdrCwZAG\"]},\"/C/Users/Samsung/code/dnp/node_modules/@openzeppelin/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0x6fb9d7889769d7cc161225f9ef7a90e468ba9788b253816f8d8b6894d3472c24\",\"urls\":[\"bzz-raw://cf4c00fc3c37cc5acf0c82ec6fd97bab67d72c2567fdc0ebf023d9c09b30a08e\",\"dweb:/ipfs/Qmb7TChG6DsEDX7LooJ4vmxot19f7VXX8S1zUGPeJTWbwZ\"]}},\"version\":1}",
+  "bytecode": "0x608060405260006100176001600160e01b0361006616565b600080546001600160a01b0319166001600160a01b0383169081178255604051929350917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908290a35061006a565b3390565b6103a7806100796000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c8063715018a61461005c5780637978b231146100665780638da5cb5b1461008c5780638f32d59b146100b0578063f2fde38b146100cc575b600080fd5b6100646100f2565b005b6100646004803603602081101561007c57600080fd5b50356001600160a01b0316610195565b610094610210565b604080516001600160a01b039092168252519081900360200190f35b6100b861021f565b604080519115158252519081900360200190f35b610064600480360360208110156100e257600080fd5b50356001600160a01b0316610243565b6100fa61021f565b61014b576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b61019d61021f565b6101ee576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600180546001600160a01b0319166001600160a01b0392909216919091179055565b6000546001600160a01b031690565b600080546001600160a01b03166102346102a8565b6001600160a01b031614905090565b61024b61021f565b61029c576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b6102a5816102ac565b50565b3390565b6001600160a01b0381166102f15760405162461bcd60e51b815260040180806020018281038252602681526020018061034d6026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b039290921691909117905556fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061646472657373a265627a7a72315820af11ca9fbe7c5daf04d00b1d7aa462344e1a1d77b4d4b8cba5ce84c878e4f0b064736f6c63430005110032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c8063715018a61461005c5780637978b231146100665780638da5cb5b1461008c5780638f32d59b146100b0578063f2fde38b146100cc575b600080fd5b6100646100f2565b005b6100646004803603602081101561007c57600080fd5b50356001600160a01b0316610195565b610094610210565b604080516001600160a01b039092168252519081900360200190f35b6100b861021f565b604080519115158252519081900360200190f35b610064600480360360208110156100e257600080fd5b50356001600160a01b0316610243565b6100fa61021f565b61014b576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b61019d61021f565b6101ee576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600180546001600160a01b0319166001600160a01b0392909216919091179055565b6000546001600160a01b031690565b600080546001600160a01b03166102346102a8565b6001600160a01b031614905090565b61024b61021f565b61029c576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b6102a5816102ac565b50565b3390565b6001600160a01b0381166102f15760405162461bcd60e51b815260040180806020018281038252602681526020018061034d6026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b039290921691909117905556fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061646472657373a265627a7a72315820af11ca9fbe7c5daf04d00b1d7aa462344e1a1d77b4d4b8cba5ce84c878e4f0b064736f6c63430005110032",
+  "sourceMap": "106:212:3:-;;;698:17:15;718:12;-1:-1:-1;;;;;718:10:15;:12;:::i;:::-;740:6;:18;;-1:-1:-1;;;;;;740:18:15;-1:-1:-1;;;;;740:18:15;;;;;;;773:43;;740:18;;-1:-1:-1;740:18:15;773:43;;740:6;;773:43;664:159;106:212:3;;788:96:10;867:10;788:96;:::o;106:212:3:-;;;;;;;",
+  "deployedSourceMap": "106:212:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;106:212:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1684:137:15;;;:::i;:::-;;211:102:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;211:102:3;-1:-1:-1;;;;;211:102:3;;:::i;899:77:15:-;;;:::i;:::-;;;;-1:-1:-1;;;;;899:77:15;;;;;;;;;;;;;;1250:92;;;:::i;:::-;;;;;;;;;;;;;;;;;;1970:107;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1970:107:15;-1:-1:-1;;;;;1970:107:15;;:::i;1684:137::-;1103:9;:7;:9::i;:::-;1095:54;;;;;-1:-1:-1;;;1095:54:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1782:1;1766:6;;1745:40;;-1:-1:-1;;;;;1766:6:15;;;;1745:40;;1782:1;;1745:40;1812:1;1795:19;;-1:-1:-1;;;;;;1795:19:15;;;1684:137::o;211:102:3:-;1103:9:15;:7;:9::i;:::-;1095:54;;;;;-1:-1:-1;;;1095:54:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;281:11:3;:26;;-1:-1:-1;;;;;;281:26:3;-1:-1:-1;;;;;281:26:3;;;;;;;;;;211:102::o;899:77:15:-;937:7;963:6;-1:-1:-1;;;;;963:6:15;899:77;:::o;1250:92::-;1290:4;1329:6;;-1:-1:-1;;;;;1329:6:15;1313:12;:10;:12::i;:::-;-1:-1:-1;;;;;1313:22:15;;1306:29;;1250:92;:::o;1970:107::-;1103:9;:7;:9::i;:::-;1095:54;;;;;-1:-1:-1;;;1095:54:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2042:28;2061:8;2042:18;:28::i;:::-;1970:107;:::o;788:96:10:-;867:10;788:96;:::o;2178:225:15:-;-1:-1:-1;;;;;2251:22:15;;2243:73;;;;-1:-1:-1;;;2243:73:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2352:6;;;2331:38;;-1:-1:-1;;;;;2331:38:15;;;;2352:6;;;2331:38;;;2379:6;:17;;-1:-1:-1;;;;;;2379:17:15;-1:-1:-1;;;;;2379:17:15;;;;;;;;;;2178:225::o",
+  "source": "pragma solidity ^0.5.17;\r\n\r\nimport \"../../node_modules/@openzeppelin/contracts/ownership/Ownable.sol\";\r\n\r\ncontract BaseController is Ownable {\r\n\r\n  // The Contract Manager's address\r\n  address managerAddr;\r\n\r\n  function setManagerAddr(address _managerAddr) public onlyOwner {\r\n    managerAddr = _managerAddr;\r\n  }\r\n\r\n}",
+  "sourcePath": "C:\\Users\\Samsung\\code\\dnp\\contracts\\helpers\\BaseController.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Samsung/code/dnp/contracts/helpers/BaseController.sol",
+    "exportedSymbols": {
+      "BaseController": [
+        556
+      ]
+    },
+    "id": 557,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 538,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "absolutePath": "/C/Users/Samsung/code/dnp/node_modules/@openzeppelin/contracts/ownership/Ownable.sol",
+        "file": "../../node_modules/@openzeppelin/contracts/ownership/Ownable.sol",
+        "id": 539,
+        "nodeType": "ImportDirective",
+        "scope": 557,
+        "sourceUnit": 9312,
+        "src": "28:74:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 540,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 9311,
+              "src": "133:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$9311",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 541,
+            "nodeType": "InheritanceSpecifier",
+            "src": "133:7:3"
+          }
+        ],
+        "contractDependencies": [
+          8730,
+          9311
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 556,
+        "linearizedBaseContracts": [
+          556,
+          9311,
+          8730
+        ],
+        "name": "BaseController",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 543,
+            "name": "managerAddr",
+            "nodeType": "VariableDeclaration",
+            "scope": 556,
+            "src": "185:19:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 542,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "185:7:3",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 554,
+              "nodeType": "Block",
+              "src": "274:39:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 552,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 550,
+                      "name": "managerAddr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 543,
+                      "src": "281:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 551,
+                      "name": "_managerAddr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 545,
+                      "src": "295:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "281:26:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 553,
+                  "nodeType": "ExpressionStatement",
+                  "src": "281:26:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 555,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 548,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 547,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 9244,
+                  "src": "264:9:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "264:9:3"
+              }
+            ],
+            "name": "setManagerAddr",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 546,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 545,
+                  "name": "_managerAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 555,
+                  "src": "235:20:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 544,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "234:22:3"
+            },
+            "returnParameters": {
+              "id": 549,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "274:0:3"
+            },
+            "scope": 556,
+            "src": "211:102:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 557,
+        "src": "106:212:3"
+      }
+    ],
+    "src": "0:318:3"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/C/Users/Samsung/code/dnp/contracts/helpers/BaseController.sol",
+      "exportedSymbols": {
+        "BaseController": [
+          556
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".17"
+          ]
+        },
+        "id": 538,
+        "name": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 9312,
+          "absolutePath": "/C/Users/Samsung/code/dnp/node_modules/@openzeppelin/contracts/ownership/Ownable.sol",
+          "file": "../../node_modules/@openzeppelin/contracts/ownership/Ownable.sol",
+          "scope": 557,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 539,
+        "name": "ImportDirective",
+        "src": "28:74:3"
+      },
+      {
+        "attributes": {
+          "contractDependencies": [
+            8730,
+            9311
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            556,
+            9311,
+            8730
+          ],
+          "name": "BaseController",
+          "scope": 557
+        },
+        "children": [
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Ownable",
+                  "referencedDeclaration": 9311,
+                  "type": "contract Ownable"
+                },
+                "id": 540,
+                "name": "UserDefinedTypeName",
+                "src": "133:7:3"
+              }
+            ],
+            "id": 541,
+            "name": "InheritanceSpecifier",
+            "src": "133:7:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "managerAddr",
+              "scope": 556,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 542,
+                "name": "ElementaryTypeName",
+                "src": "185:7:3"
+              }
+            ],
+            "id": 543,
+            "name": "VariableDeclaration",
+            "src": "185:19:3"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "name": "setManagerAddr",
+              "scope": 556,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_managerAddr",
+                      "scope": 555,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 544,
+                        "name": "ElementaryTypeName",
+                        "src": "235:7:3"
+                      }
+                    ],
+                    "id": 545,
+                    "name": "VariableDeclaration",
+                    "src": "235:20:3"
+                  }
+                ],
+                "id": 546,
+                "name": "ParameterList",
+                "src": "234:22:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 549,
+                "name": "ParameterList",
+                "src": "274:0:3"
+              },
+              {
+                "attributes": {
+                  "arguments": null
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 9244,
+                      "type": "modifier ()",
+                      "value": "onlyOwner"
+                    },
+                    "id": 547,
+                    "name": "Identifier",
+                    "src": "264:9:3"
+                  }
+                ],
+                "id": 548,
+                "name": "ModifierInvocation",
+                "src": "264:9:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 543,
+                              "type": "address",
+                              "value": "managerAddr"
+                            },
+                            "id": 550,
+                            "name": "Identifier",
+                            "src": "281:11:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 545,
+                              "type": "address",
+                              "value": "_managerAddr"
+                            },
+                            "id": 551,
+                            "name": "Identifier",
+                            "src": "295:12:3"
+                          }
+                        ],
+                        "id": 552,
+                        "name": "Assignment",
+                        "src": "281:26:3"
+                      }
+                    ],
+                    "id": 553,
+                    "name": "ExpressionStatement",
+                    "src": "281:26:3"
+                  }
+                ],
+                "id": 554,
+                "name": "Block",
+                "src": "274:39:3"
+              }
+            ],
+            "id": 555,
+            "name": "FunctionDefinition",
+            "src": "211:102:3"
+          }
+        ],
+        "id": 556,
+        "name": "ContractDefinition",
+        "src": "106:212:3"
+      }
+    ],
+    "id": 557,
+    "name": "SourceUnit",
+    "src": "0:318:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-05-31T16:54:39.241Z",
+  "devdoc": {
+    "methods": {
+      "isOwner()": {
+        "details": "Returns true if the caller is the current owner."
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,0 +1,64 @@
+import React from "react";
+import { Button } from "shards-react";
+import RegModal from '../modals/JoinModal';
+ 
+ export default class JoinBtnInterestBar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+
+    this.state = {
+      dropdownOpen: false,
+      collapseOpen: false,
+      showRegisterModal: false,
+      ethNetwork: null,
+      networkId: null
+    };
+  }
+
+  
+  toggleRegisterModal = async () => {
+    const { showRegisterModal } = this.state
+
+    this.setState({
+      showRegisterModal: !showRegisterModal,
+    })
+  }
+
+  toggleDropdown() {
+    this.setState({
+      ...this.state,
+      ...{
+        dropdownOpen: !this.state.dropdownOpen
+      }
+    });
+  }
+
+  toggleNavbar() {
+    this.setState({
+      ...this.state,
+      ...{
+        collapseOpen: !this.state.collapseOpen
+      }
+    });
+  }
+
+  render() {
+    const { showRegisterModal } = this.state;
+      return ( 
+            <div className="col-sm d-flex justify-content-sm-center"> 
+              <Button onClick={this.toggleRegisterModal} onClose={this.toggleRegisterModal} block outline theme="success" size="sm">
+                <div className="join-btn">ACCESS</div>
+              </Button>
+
+              <div>
+                {showRegisterModal && (
+                  <RegModal onClose={this.toggleRegisterModal} />
+                )}
+              </div> 
+            </div>  
+        )  
+    }
+}

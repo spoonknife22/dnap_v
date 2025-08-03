@@ -1,0 +1,75 @@
+{
+  "name": "cacp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@drizzle-utils/core": "^0.3.1-alpha.0",
+    "@drizzle-utils/get-web3": "^0.2.2-alpha.0",
+    "@drizzle/react-components": "^1.5.1",
+    "@drizzle/react-plugin": "^1.5.3",
+    "@drizzle/store": "^1.5.3",
+    "@metamask/detect-provider": "^1.2.0",
+    "@openzeppelin/contracts": "^2.5.0",
+    "@popperjs/core": "^2.4.2",
+    "@rimble/connection-banner": "^1.2.3",
+    "@rimble/network-indicator": "^1.2.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@truffle/hdwallet-provider": "^1.2.1",
+    "bn.js-typings": "^1.0.1",
+    "bootstrap": "^4.4.1",
+    "chart.js": "^2.9.3",
+    "drizzle": "^1.4.0",
+    "formik": "^2.2.5",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.28",
+    "next": "^9.3.2",
+    "next-routes": "^1.4.2",
+    "opensea-js": "^1.1.5",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-chartjs-2": "^2.9.0",
+    "react-countdown": "^2.2.1",
+    "react-dom": "^16.12.0",
+    "react-moment": "^0.9.7",
+    "react-moment-countdown": "^0.4.0",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0",
+    "react-toastify": "^5.5.0",
+    "redux": "4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-saga": "^1.1.3",
+    "rimble-ui": "^0.13.1",
+    "shards-react": "^1.0.3",
+    "shards-ui": "^3.0.0",
+    "styled-components": "^5.0.1",
+    "truffle": "^5.1.63",
+    "web3": "^1.2.8",
+    "yup": "^0.31.1"
+  },
+  "scripts": {
+    "dev": "next client"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.3%",
+      "not ie 11",
+      "not dead",
+      "not op_mini all"   
+    ],
+    "development": [
+      ">0.3%",
+      "not ie 11",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "devDependencies": {
+    "babel-plugin-inline-react-svg": "^1.1.1"
+  }
+}

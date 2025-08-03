@@ -12,6 +12,11 @@
 /.next/
 /out/
 
+
+client/.next/
+client/images/
+
+client/.next/images/fontawesome-free-5.15.1-web/
 # production
 /build
 
